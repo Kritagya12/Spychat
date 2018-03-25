@@ -12,7 +12,7 @@ print('Alright ' + spy_name + '. I\'d like to know a little bit more about you.'
 ##############################MODULE 2###############################
 spy_age = 0#initializing age with 0
 spy_rating = 0.0#initializing rating with 0
-from spy_details import spy_name, spy_salutation, spy_age, spy_rating#Importing files from spy_details.py
+from spy_details import spy_name, spy_salutation, spy_age, spy_rating#Importing details from spy_details.py
 
 question = "Continue as " + spy_salutation + " " + spy_name + "(Y/N)?" #To know if the spy is default user or not
 existing = input(question)
