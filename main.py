@@ -1,3 +1,4 @@
+##############################MODULE 1###############################
 print('Hello!') #print is a  function in python to print whatever comes after it to the screen.
 print('Let\'s get started')
 #input("What is your name?") #input is a function to input something from the spy.
@@ -38,7 +39,7 @@ else:
             print('You can always do better')
         else:
             print('We can always use somebody to help in the office.')
-            print("Welcome to spychat %s %s Age: %d Your rating:%f" %(spy_salutation,spy_name,spy_age,spy_rating))
+        print("Welcome to spychat %s %s Age: %d Your rating:%f" %(spy_salutation,spy_name,spy_age,spy_rating))
        # print('Welcome to the spychat ' + spy_salutation + ' ' + spy_name + ' with age ' + str(spy_age) + ' and spy rating as ' + str(spy_rating) + '.')
 
 
