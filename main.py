@@ -20,7 +20,7 @@ existing = input(question)
 if(existing=="Y"):
     print("Welcome to spychat %s %s Age: %d Your rating:%f" % (spy_salutation, spy_name, spy_age, spy_rating)) #print('Welcome to the spychat ' + spy_salutation + ' ' + spy_name + ' with age ' + str(spy_age) + ' and spy rating as ' + str(spy_rating) + '.')
 else:
-    spy_name=input("Welcome to spy chat, you must tell me your spy name first: ")
+    spy_name=input("Welcome to spy chat, you must tell me your spy name first: ")# spy creating his own user
     if len(spy_name) > 0:
         spy_salutation = input("Should I call you Mr. or Ms.?: ")
 
