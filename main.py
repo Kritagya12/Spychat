@@ -1,7 +1,8 @@
 print('Hello!') #print is a  function in python to print whatever comes after it to the screen.
 print('Let\'s get started')
 
-def entry():
+############About spy##############
+def enter():
     spy_name = input("Welcome to spy chat, you must tell me your spy name first: ")  # spy creating his own user
     if len(spy_name) > 0:
         print('Welcome'+ spy_name+'.Glad to have u back with us')
@@ -13,7 +14,7 @@ def entry():
     else:
         print('A spy needs to have a valid name.Try again please.')
 
-
+#########Other spy details##############
     spy_age = 0#initializing age with 0    #Details
     spy_rating = 0.0#initializing rating with 0
     spy_is_online = False
@@ -33,10 +34,6 @@ def entry():
     else:
         print('We can always use somebody to help in the office.')
     print("Welcome to spychat %s %s Age: %d Your rating:%f" % (spy_salutation, spy_name, spy_age, spy_rating))
-
-#######################################################################################################3
-
-
 
  ###########Starting of spychat#############
 def start_chat(): #start_chat is a function
@@ -114,7 +111,7 @@ if user=="Y":
     print("Welcome, %s %s with %d years of age and %d rating.Welcome to spychat" %(spy_salutation,spy_name,spy_age,spy_rating))
 else:
     new_user = 1
-    entry()
+    enter()
 STATUS_MESSAGE=['You are in','How are you?','Let\'s move further']
 Friend_name=[]
 Friend_age=[]
