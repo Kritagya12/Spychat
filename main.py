@@ -120,7 +120,6 @@ def send_message():
     output_path = 'output12.jpg'
     text = raw_input("What do you want to say?")
     Steganography.encode(original_image, output_path, text)
-
 send_message()
 
 user=raw_input("Do you want to continue to Mr.Bond?(Y/N)") #Default user
