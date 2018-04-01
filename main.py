@@ -6,7 +6,7 @@ def enter():
     spy_name = input("Welcome to spy chat, you must tell me your spy name first: ")  # spy creating his own user
     if len(spy_name) > 0:
         print('Welcome'+ spy_name+'.Glad to have u back with us')
-        spy_salutation = input("What should we call you (Mr. or Ms.)?")  # Another variable to store the salutation.
+        spy_salutation = raw_input("What should we call you (Mr. or Ms.)?")  # Another variable to store the salutation.
         spy_salutation + " " + spy_name  # We are joining the two strings together.
         spy_name = spy_salutation + " " + spy_name  # Variable re-assignment
         print(spy_name)
@@ -18,13 +18,13 @@ def enter():
     spy_age = 0#initializing age with 0    #Details
     spy_rating = 0.0#initializing rating with 0
     spy_is_online = False
-    spy_age = int(input("What is your age?"))          # Asking spy age
+    spy_age = int(raw_input("What is your age?"))          # Asking spy age
     if spy_age > 12 and spy_age < 50:
-        spy_rating = float(input("What is your spy rating?"))
+        spy_rating = float(raw_input("What is your spy rating?"))
     else:
         print('Sorry you are not of the correct age to be a spy')
 
-    spy_rating = float(input("What is your spy rating?"))
+    spy_rating = float(raw_input("What is your spy rating?"))
     if spy_rating > 4.5:
         print('Great ace!')
     elif spy_rating > 3.5 and spy_rating <= 4.5:
@@ -41,7 +41,7 @@ def start_chat():
   current_status_message=None
   while show_menu==True:
       menu_choices = ("What do you want to do? \n1. Add a status update \n2. Add a friend \n3.Close Application \n")
-      menu_choice = int(input(menu_choices))
+      menu_choice = int(raw_input(menu_choices))
 
 
       if menu_choice == 1:
@@ -63,9 +63,9 @@ def add_status(current_status_message):
     else:
       print ('You don\'t have any status message currently \n')
 
-    default = input("Do you want to select from the older status (y/n)? ")
+    default = raw_input("Do you want to select from the older status (y/n)? ")
     if default.upper() == "N":
-        new_status_message = input("What status message do you want to set?")
+        new_status_message = raw_input("What status message do you want to set?")
 
         if len(new_status_message) > 0:
             updated_status_message = new_status_message
@@ -75,7 +75,7 @@ def add_status(current_status_message):
         for message in STATUS_MESSAGES:
             print(str(item_position) + ". " + message)
             item_position = item_position + 1
-        message_selection = int(input("\nChoose from the above messages "))
+        message_selection = int(raw_input("\nChoose from the above messages "))
         if len(STATUS_MESSAGES) >= message_selection:
             updated_status_message = STATUS_MESSAGES[message_selection - 1]
     return updated_status_message
@@ -84,11 +84,11 @@ STATUS_MESSAGES = ['My name is Bond, James Bond', 'Shaken, not stirred.']
 
 ############Addition of a new spy friend###############
 def add_friend():
-    new_name = input("Please add your friend's name:")
-    new_salutation = input("Are they Mr. or Ms.?: ")
+    new_name = raw_input("Please add your friend's name:")
+    new_salutation = raw_input("Are they Mr. or Ms.?: ")
     new_name = new_salutation + " " + new_name
-    new_age = int(input("Age?"))
-    new_rating = float(input("Spy rating?"))
+    new_age = int(raw_input("Age?"))
+    new_rating = float(raw_input("Spy rating?"))
     if len(new_name) > 0 and 12 < new_age < 50:
         Friend_name.append(new_name)  # Add Friend
         Friend_age.append(new_age)
@@ -104,10 +104,26 @@ friends = [{"Shivam":{"age":22,"rating":4.6}}]
 friends
 
 def select_friend():
-  for friend in friends:
-    print('age %d with rating %.2f is online' %(friend['age'], friend['rating']))
+  item_number = 0
 
-user=input("Do you want to continue to Mr.Bond?(Y/N)") #Default user
+  for friend in friends:
+      print ('%d. %s' % (item_number + 1, friend['name']))
+      item_number = item_number + 1
+  friend_choice = int(raw_input("Choose from your friends"))
+  friend_choice_position = friend_choice - 1
+
+  return friend_choice_position
+
+from steganography.steganography import Steganography
+def send_message():
+    original_image = raw_input("What is the name of the image?")
+    output_path = 'output12.jpg'
+    text = raw_input("What do you want to say?")
+    Steganography.encode(original_image, output_path, text)
+
+send_message()
+
+user=raw_input("Do you want to continue to Mr.Bond?(Y/N)") #Default user
 new_user=0
 if user=="Y":
     from spy_details import spy_name
