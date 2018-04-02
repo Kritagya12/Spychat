@@ -112,7 +112,7 @@ def add_friend():
 
 ###########################Friend selection###############################
 def select_a_friend():
-  item_number = 1
+  item_number = 0
   for friend_name in Friend_name:
       print ('%d. %s' % (item_number + 1, friend_name['name']))
       item_number = item_number + 1
@@ -123,25 +123,25 @@ def select_a_friend():
 
 #######################Sending a message to a friend#######################
 def send_message():
-    friend_choice=int(select_a_friend())-1
+    friend_choice=select_a_friend()
     original_image = raw_input("What is the name of the image?")
-    output_path = 'output12.jpg'
+    output_path = 'output4.jpg'
     text = raw_input("What do you want to say?")
     Steganography.encode(original_image, output_path, text)
-    chat = {"Message": text, "Time": datetime.now(), "Sent by me": True}
-    Friend_name[friend_choice]["chats"]=chat
+    new_chat = {"Message": text, "Time": datetime.now(), "Sent by me": True}
+    Friend_name[friend_choice]["chats"]=new_chat
     print "Your secret message is ready. \n"
 
 #############################Reading a message#############################
 def read_message():
-    sender = int(select_a_friend())-1
+    sender = select_a_friend()
     output_path = raw_input("What is the name of the file?")
     secret_text = Steganography.decode(output_path)
     present_time = datetime.now()
     print "Your secret message is ready:\n"
     print secret_text, "\n"
-    chat = {"Message": secret_text, "Time": present_time, "Sent by me": False}
-    Friend_name[sender]['chats']=chat
+    new_chat = {"Message": secret_text, "Time": present_time, "Sent by me": False}
+    Friend_name[sender]['chats']=new_chat
 
 user=raw_input("Do you want to continue to Mr.Bond?(Y/N)") #Default user
 new_user=0
