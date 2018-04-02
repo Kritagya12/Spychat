@@ -5,6 +5,11 @@ from spy_details import spy_name,spy_salutation,spy_age,spy_rating
 print('Hello!') #print is a function in python to print whatever comes after it to the screen.
 print('Let\'s get started')
 
+Friend_name=[]
+Friend_age=[]
+Friend_rating=[]
+Friend_status=[]
+
 ############About spy##############
 def enter():
     spy_name = raw_input("Welcome to spy chat, you must tell me your spy name first: ")# spy creating his own user
@@ -103,9 +108,6 @@ def add_friend():
     friend["chats"] = []
     if len(friend["name"]) > 0 and 12 < friend["age"] < 50:
         Friend_name.append(friend)  # Add Friend
-        #Friend_age.append(new_age)
-        #Friend_rating.append(new_rating)
-        #Friend_status.append(True)
     else:
         print('Sorry! Invalid entry. We can\'t add spy with the details you provided')
     return len(Friend_name)
@@ -129,7 +131,7 @@ def send_message():
     text = raw_input("What do you want to say?")
     Steganography.encode(original_image, output_path, text)
     new_chat = {"Message": text, "Time": datetime.now(), "Sent by me": True}
-    Friend_name[friend_choice]["chats"]=new_chat
+    Friend_name[friend_choice]["chats"].append(new_chat)
     print "Your secret message is ready. \n"
 
 #############################Reading a message#############################
@@ -141,7 +143,7 @@ def read_message():
     print "Your secret message is ready:\n"
     print secret_text, "\n"
     new_chat = {"Message": secret_text, "Time": present_time, "Sent by me": False}
-    Friend_name[sender]['chats']=new_chat
+    Friend_name[sender]['chats'].append(new_chat)
 
 user=raw_input("Do you want to continue to Mr.Bond?(Y/N)") #Default user
 new_user=0
@@ -155,11 +157,7 @@ else:
     new_user = 1
     enter()
 
-Friend_name=[]
-Friend_age=[]
-Friend_rating=[]
-Friend_status=[]
-start_chat()
+start_chat() #Callling this function for menu of choices
 
 
 
