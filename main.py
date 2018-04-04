@@ -7,8 +7,10 @@ from spy_details import Spy,friends, ChatMessage #Importing classes
 # List of statuses
 STATUS_MESSAGES=['Hello, there!!!!','Busy','Available']
 
-#-----------------------------------------------------------------------------------------------------------------------
-#START Function used to add friends
+#_______________________________________________________________________________________________________________________
+                                            # Function used to add friends #
+#_______________________________________________________________________________________________________________________
+#START
 def add_friend():
     new_friend = Spy(" ", " ", 0, 0.0)
 
@@ -58,11 +60,11 @@ def add_friend():
     #Total number of friends in the list
     return len(friends)
 
-#END Function used to add friends
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-#START Function used to select one friend from the friend list
+#END
+#_______________________________________________________________________________________________________________________
+                                # Function used to select one friend from the friend list #
+#_______________________________________________________________________________________________________________________
+#START
 def select_a_friend():
   item_number = 0
   for friend in friends:
@@ -72,11 +74,11 @@ def select_a_friend():
   friend_choice_position = friend_choice - 1
   return friend_choice_position
 
-#END Function used to select one friend from the friend list
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-# START Function used for Sending message to a friend
+#END
+#_______________________________________________________________________________________________________________________
+                                    # Function used for Sending message to a friend #
+#_______________________________________________________________________________________________________________________
+# START
 def send_message():
     friend_choice=select_a_friend()
     original_image = raw_input("What is the name of the image?")
@@ -85,13 +87,14 @@ def send_message():
     Steganography.encode(original_image, output_path, text)
     new_chat = {"Message": text, "Time": datetime.now(), "Sent by me": True}
     friends[friend_choice].chats.append(new_chat)
+
     print "Your secret message is ready. \n"
 
-# END Function used for Sending message to a friend
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-#START Function for reading a message
+#END
+#_______________________________________________________________________________________________________________________
+                                            # Function for reading a message #
+#_______________________________________________________________________________________________________________________
+#START
 def read_message():
     sender = select_a_friend()
     output_path = raw_input("What is the name of the file?")
@@ -103,11 +106,11 @@ def read_message():
     friends[sender].chats.append(new_chat)
     print("Your secret message is "+secret_text)
 
-#END Function for reading a message
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-# START Function use for updation of status
+#END
+#_______________________________________________________________________________________________________________________
+                                            #Function for updating of status #
+#_______________________________________________________________________________________________________________________
+# START
 def add_status(current_status_message):
     if current_status_message != None:
       print ("Your current status message is " + current_status_message + "\n")
@@ -131,11 +134,11 @@ def add_status(current_status_message):
             updated_status_message = STATUS_MESSAGES[message_selection - 1]
     return updated_status_message
 
-# END Function use for updating the status
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-#START Function to show the menu to the user so that user can select a desired function
+# END
+#_______________________________________________________________________________________________________________________
+                # Function to show the menu to the user so that user can select a desired function #
+#_______________________________________________________________________________________________________________________
+#START
 def start_chat():
   show_menu = True
   current_status_message=None
@@ -165,11 +168,11 @@ def start_chat():
           show_menu = False
           print("Quitting")
 
-#END Function to show the menu to the user so that user can select a desired function
-#-----------------------------------------------------------------------------------------------------------------------
-
-#-----------------------------------------------------------------------------------------------------------------------
-#START Function consists details of spy
+#END
+#_______________________________________________________________________________________________________________________
+                                            # Function consists details of spy #
+#_______________________________________________________________________________________________________________________
+#START
 def enter():
     spy_name = raw_input("Welcome to spy chat, you must tell me your spy name first: ")# spy creating his own user
     if len(spy_name) > 0:
@@ -201,10 +204,8 @@ def enter():
     else:
         print('We can always use somebody to help in the office.')
     print("Welcome to spychat %s %s Age: %d Your rating:%f" % (spy_salutation, spy_name, spy_age, spy_rating))
-
-
-# END Function consists details of spy##############
-#-----------------------------------------------------------------------------------------------------------------------
+#END
+#_______________________________________________________________________________________________________________________
 
 print('Hello!') #print is a function in python to print whatever comes after it to the screen.
 print('Let\'s get started')
