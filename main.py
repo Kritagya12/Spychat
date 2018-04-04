@@ -25,7 +25,7 @@ def add_friend():
 
     new_friend.salutation = raw_input("What to call Mr. or Ms.?: ")
 
-    # user salutation validation
+    # checking user salutation validation
     if len(new_friend.salutation) > 0:
         if len(new_friend.salutation) > 5:
             print("Your salutation is too big.")

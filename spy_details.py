@@ -1,6 +1,6 @@
 from datetime import datetime
 
-################creating a Spy class#################
+#Creating a Spy class
 class Spy:
 
   def __init__(self, name, salutation, age, rating):
@@ -12,7 +12,7 @@ class Spy:
     self.chats = []
     self.current_status_message = None
 
-#Creating ChatMessage class
+#Creating a ChatMessage class
 class ChatMessage:
 
   def __init__(self, message, sent_by_me):
