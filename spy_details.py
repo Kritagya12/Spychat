@@ -12,8 +12,8 @@ class Spy:
     self.chats = []
     self.current_status_message = None
 
-###########creating Chat class#############
-class Chat:
+#Creating ChatMessage class
+class ChatMessage:
 
   def __init__(self, message, sent_by_me):
     self.message = message
