@@ -2,7 +2,7 @@ from steganography.steganography import Steganography
 from datetime import datetime
 from spy_details import spy
 from spy_details import friends
-from spy_details import Spy,friends, ChatMessage #Importong classes
+from spy_details import Spy,friends, ChatMessage #Importing classes
 
 # List of statuses
 STATUS_MESSAGES=['Hello, there!!!!','Busy','Available']
