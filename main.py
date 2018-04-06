@@ -261,7 +261,7 @@ if (user.upper()=="Y"):
 
 elif(user.upper()=="N"):
 
-    spy_name = raw_input("Welcome to spy chat, you must tell me your spy name first: ")  # spy creating his own user
+    spy.name = raw_input("Welcome to spy chat, you must tell me your spy name first: ")  # spy creating his own user
     if len(spy.name) >= 3:
         print('Welcome ' + spy.name + '.Glad to have u back with us')
         spy.salutation = raw_input("What should we call you Mr. or Ms.?")
