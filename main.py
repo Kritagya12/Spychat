@@ -1,13 +1,12 @@
 from steganography.steganography import Steganography
-from termcolor import colored
 from datetime import datetime
 from spy_details import spy,friends
 from spy_details import Spy, ChatMessage, Spy_friend #Importing classes
 import csv
 
 
-print('Hello!')
 print('Welcome to Spychat.\nLet\'s get started')
+print('Hello!')
 
 
 def load_friends():
@@ -154,7 +153,7 @@ def read_message():
         "sent_by_me": True
     }
     friends[sender].chats.append(new_chat)
-    print colored("The secret message send by your friend is "+secret_text,"red")
+    print("The secret message send by your friend is "+secret_text)
 
 
 #END
@@ -171,8 +170,8 @@ def ReadChatload_friends(choice):
             if row:
                     if (row[1]==name_friend):
                         check =True
-                        print  colored(row[2],"red")
-                        print  colored(row[3],"blue")
+                        print row[2]
+                        print row[3]
 
 #END
 #__________________________________________________________________________________________________________________________________________
@@ -218,13 +217,13 @@ def add_status(current_status_message):
                          # Function to show the menu to the user so that user can select a desired function #
 #__________________________________________________________________________________________________________________________________________
 # START
-def start_chat(spy_name, spy_age, spy_rating):
-    current_status_message = None
+def start_chat():
     show_menu = True
-
-    while show_menu==True:
+    current_status_message = None
+    while show_menu == True:
         menu_choices = ("What do you want to do? \n1. Add a status update \n2. Add a friend \n3. Send a secret message \n4. Read a secret message \n5. Read chats from a 'User' \n6. Close Application \n")
         menu_choice = int(raw_input(menu_choices))
+
         if menu_choice == 1:
             print ('You chose to update the status')
             current_status_message = add_status(current_status_message)
@@ -248,6 +247,7 @@ def start_chat(spy_name, spy_age, spy_rating):
             show_menu = False
             print("You have successfully logged out")
 
+
 #END
 #_______________________________________________________________________________________________________________________
 
@@ -255,7 +255,7 @@ user=raw_input("Do you want to continue as  " + spy.name + " (Y/N)?") #Default u
 
 if (user.upper()=="Y"):
         print("Welcome, %s with %d years of age and %f rating." %(spy.name,spy.age,spy.rating))
-        start_chat(spy.name, spy.age, spy.rating)
+        start_chat()
 
 #_______________________________________________________________________________________________________________________
 
@@ -290,4 +290,4 @@ elif(user.upper()=="N"):
 else:
     print "invalid"
 
-start_chat(spy.name, spy.age, spy.rating)
+start_chat()
