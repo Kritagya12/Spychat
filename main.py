@@ -106,7 +106,7 @@ def add_friend():
 def select_a_friend():
   item_number = 0
   for friend in friends:
-      print (str(item_number+1)+ " " + friend.name)
+      print (str(item_number+1)+ " " +friend.name)
       item_number = item_number + 1
   friend_choice = int(raw_input("Choose from your friends"))
   friend_index = friend_choice - 1
