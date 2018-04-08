@@ -1,2 +1,2 @@
 # spychat
-my first python project
+I have completed my first python project
