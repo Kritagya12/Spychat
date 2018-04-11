@@ -92,13 +92,6 @@ def select_a_friend():
     return friend_choice_position
 #END
 #_______________________________________________________________________________________________________________________
-                                              # List of special words #
-#_______________________________________________________________________________________________________________________
-
-#List of special characters, if there in text,spychat should provide an appropriate message
-special_cases = ['SAVEME', 'SOS' , 'HELP']
-
-#_______________________________________________________________________________________________________________________
                                             # Function used to send message #
 #_______________________________________________________________________________________________________________________
 #START
@@ -108,8 +101,7 @@ def send_a_message():
     original_image = raw_input("What is the name of the image?")
     output_path = 'output.jpg'
     text = raw_input("What do you want to say?")
-    if text in special_cases:
-        print colored(text + ": IT'S EMMERGENCY!!", "red")
+
     #encoding the message
     Steganography.encode(original_image, output_path, text)
 
@@ -142,6 +134,10 @@ def read_a_message():
     with open("Chats.csv", 'a') as chat_data1:
         writer = csv.writer(chat_data1)
         writer.writerow([chat.spy_name, chat.friend_name, chat.time, chat.message])
+    new_text = (secret_text.upper()).split()
+    if 'SOS' in new_text or 'ALERT' in new_text or 'HELP' in new_text:
+        print colored("EMERGENCY!!", "red")
+
 
 #END
 #_______________________________________________________________________________________________________________________
